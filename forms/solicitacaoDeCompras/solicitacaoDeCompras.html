@@ -1,0 +1,84 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script src="custom.js"></script>
+</head>
+<body>
+
+
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+		
+	
+			<div class="panel panel-default">
+		      <div class="panel-heading">
+		         <h3 class="panel-title">Dados</h3>
+		      </div>
+		      <div class="panel-body">
+		         <div class="input-group">
+		            <span class="input-group-addon">Solicitação</span>
+		            <input id="numSolicitacao" type="text" class="form-control" name="numSolicitacao">
+		         </div>
+		         <div class="input-group">
+		            <span class="input-group-addon">Solicitante</span>
+		            <input id="solicitante" type="text" class="form-control" name="solicitante">
+		         </div>
+		         <div class="input-group">
+		            <span class="input-group-addon">Data de abertura</span>
+		            <input id="dataAbertura" type="text" class="form-control" name="dataAbertura">
+		         </div>
+		      </div>
+		   </div>
+	
+	
+		   <div class="panel panel-default">
+		      <div class="panel-heading">
+		         <h3 class="panel-title">Solicitação de Compras</h3>
+		      </div>
+		      <div class="panel-body">
+		         <div class="input-group">
+		            <span class="input-group-addon">Produto</span>
+		            <input id="produto" type="text" class="form-control" name="produto" placeholder="Nome do produto que será comprado">
+		         </div>
+		         
+		         
+		         <div class="input-group">
+		            <span class="input-group-addon">Valor</span>
+		            <input id="valor" type="text" class="form-control" name="valor" placeholder="Valor do produto que será comprado">
+		         </div>
+		         
+		         
+		         <div class="input-group">
+		            <span class="input-group-addon">Quantidade</span>
+		            <input id="quantidade" type="number" class="form-control" name="quantidade" placeholder="Quantidade">
+		         </div>
+		         <div class="input-group">
+		            <span class="input-group-addon">Valor total</span>
+		            <input id="total" type="number" class="form-control" name="total">
+		         </div>
+		      </div>
+		   </div>
+		   
+		   
+		   <div class="panel panel-default">
+		      <div class="panel-heading">
+		         <h3 class="panel-title">Aprovação</h3>
+		      </div>
+		      <div class="panel-body">
+		         <div class="radio">
+		            <label><input type="radio" name="aprovado" value="sim">Sim</label>
+		         </div>
+		         <div class="radio">
+		            <label><input type="radio" name="aprovado" value="nao">Não</label>
+		         </div>
+		      </div>
+		   </div>
+		</form>
+	</div>
+
+</body>
+</html>
