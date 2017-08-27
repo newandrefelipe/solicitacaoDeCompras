@@ -33,6 +33,10 @@ var sendEmailUtils = (function() {
 		    //Envia e-mail
 		    // notifier.notify("MATRICULA-REMETENTE", "CODIGO-TEMPLATE", parametros, destinatarios, "text/html");
 		    notifier.notify("usuario.integrador", "tplsolicitacaoDeComprasAprovacao-pt", parametros, destinatarios, "text/html");
+		},
+		
+		notifyRequester: function(matriculaSolicitante) {
+			
 		}
 	}
 })();
