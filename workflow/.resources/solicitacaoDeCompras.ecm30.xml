@@ -9,7 +9,7 @@
     <active>true</active>
     <publicProcess>false</publicProcess>
     <volumeId>Default</volumeId>
-    <categoryId></categoryId>
+    <categoryId>Financeiro</categoryId>
     <managerEngineAllocationId></managerEngineAllocationId>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
@@ -28,10 +28,10 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>solicitacaoDeCompras</processId>
-      <version>9</version>
+      <version>19</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
-    <formId>0</formId>
+    <formId>43</formId>
     <editionMode>true</editionMode>
     <updateAttachmentsVersion>false</updateAttachmentsVersion>
     <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
@@ -205,8 +205,8 @@
         <version>1</version>
         <sequence>13</sequence>
       </processStatePK>
-      <stateName>End</stateName>
-      <stateDescription>End</stateDescription>
+      <stateName>Sim</stateName>
+      <stateDescription>Sim</stateDescription>
       <instruction>Atividade final do processo</instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -252,8 +252,8 @@
         <version>1</version>
         <sequence>15</sequence>
       </processStatePK>
-      <stateName>End</stateName>
-      <stateDescription>End</stateDescription>
+      <stateName>Não</stateName>
+      <stateDescription>Não</stateDescription>
       <instruction>Atividade final do processo</instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -386,6 +386,52 @@
     <WorkflowProcessEvent>
       <workflowProcessEventPK>
         <companyId>1</companyId>
+        <eventId>sendEmail</eventId>
+        <processId>solicitacaoDeCompras</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function sendEmail(sequenceId, colleagueId) {
+	
+	log.info(&quot;########### sendEmail ###########&quot;);
+	
+	if (sequenceId == 5) {
+		log.info(&quot;### ENTROU NO IF&quot;);
+		sendEmailUtils.notifyApprover(colleagueId);
+	}
+}
+
+var sendEmailUtils = (function() {
+	return {
+		notifyApprover: function(colleagueId) {
+			log.info(&quot;#### notifyApprover ####&quot;);
+			
+			//Monta mapa com parâmetros do template
+		    var parametros = new java.util.HashMap();
+		    parametros.put(&quot;NR_SOLICITACAO&quot;, hAPI.getCardValue(&quot;numSolicitacao&quot;));
+		    parametros.put(&quot;NM_SOLICITANTE&quot;, hAPI.getCardValue(&quot;solicitante&quot;));
+		    parametros.put(&quot;DATA_ABERTURA&quot;, hAPI.getCardValue(&quot;dataAbertura&quot;));
+		    parametros.put(&quot;PRODUTO&quot;, hAPI.getCardValue(&quot;produto&quot;));
+		    parametros.put(&quot;VALOR_UNITARIO&quot;, hAPI.getCardValue(&quot;valor&quot;));
+		    parametros.put(&quot;QUANTIDADE&quot;, hAPI.getCardValue(&quot;quantidade&quot;));
+		    parametros.put(&quot;VALOR_TOTAL&quot;, hAPI.getCardValue(&quot;total&quot;));
+		    
+		    //Este parâmetro é obrigatório e representa o assunto do e-mail
+		    parametros.put(&quot;subject&quot;, &quot;Nova solicitação de compras aguardando sua aprovação&quot;);
+		 
+		    //Monta lista de destinatários
+		    var destinatarios = new java.util.ArrayList();
+		    destinatarios.add(colleagueId);
+		    
+		    //Envia e-mail
+		    // notifier.notify(&quot;MATRICULA-REMETENTE&quot;, &quot;CODIGO-TEMPLATE&quot;, parametros, destinatarios, &quot;text/html&quot;);
+		    notifier.notify(&quot;usuario.integrador&quot;, &quot;tplsolicitacaoDeComprasAprovacao-pt&quot;, parametros, destinatarios, &quot;text/html&quot;);
+		}
+	}
+})();</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
         <eventId>afterTaskCreate</eventId>
         <processId>solicitacaoDeCompras</processId>
         <version>1</version>
@@ -398,7 +444,18 @@
 	var sequenceId = getValue(&quot;WKCurrentState&quot;);
 	
 	log.info(&quot;############ numeroProcesso: &quot; + numeroProcesso);
+	log.info(&quot;############ sequenceId    : &quot; + sequenceId);
+	log.info(&quot;############ colleagueId   : &quot; + colleagueId);
+	
 	hAPI.setCardValue(&quot;numSolicitacao&quot;, numeroProcesso);
+	
+	// Switch nao funcionou pois o sequenceId eh object
+	
+	// Aprovacao
+	if (sequenceId == 5) {
+		log.info(&quot;### ENTROU NO 5 IF&quot;);
+		sendEmail(sequenceId, colleagueId);
+	}
 	
 }</eventDescription>
     </WorkflowProcessEvent>
@@ -501,7 +558,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDeCompras</processId>
-        <version>9</version>
+        <version>19</version>
         <linkSequence>6</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -512,7 +569,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDeCompras</processId>
-        <version>9</version>
+        <version>19</version>
         <linkSequence>8</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -523,7 +580,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDeCompras</processId>
-        <version>9</version>
+        <version>19</version>
         <linkSequence>10</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -534,7 +591,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDeCompras</processId>
-        <version>9</version>
+        <version>19</version>
         <linkSequence>11</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>

@@ -1,0 +1,154 @@
+<!-- TPL001-PT.HTML - Notifica&ccedil;&atilde;o Novo Documento para Aprovar - Portugu&ecirc;s - HTML -->
+<html>
+	<head>
+		<title>APROVACAO COMPRAS</title>
+		
+		<style>
+	        body {
+	            font-family: "Tahoma", "Arial", sans-serif;
+	            font-size: 10px;
+	            background-color: #f5f5f5;
+	            color: #58595b;
+	        }
+	
+	        .titulo {
+	            text-align: center;
+	            font-size: 1.8em;
+	            margin-bottom: 15px;
+	        }
+	        
+	        .texto-informativo {
+	        	font-size: 10px;
+	        	text-align: center;
+	        }
+	
+	        .logo {
+	            text-align: left;
+	        }
+	
+	        .container {
+	            width: 80%;
+	            margin: auto;
+	            max-width: 900px;
+	        }
+	
+	        .header {
+	            margin: auto;
+	        }
+	
+	        .main {
+	            margin: auto;
+	        }
+	
+	        table {
+	            border-collapse: collapse;
+	            margin: auto;
+	            width: 500px;
+	        }
+	
+	        table,
+	        th,
+	        td {
+	            border: 1px solid #c3c3c3;
+	        }
+	
+	        table td.label {
+	            white-space: nowrap
+	        }
+	
+	        th,
+	        td {
+	            padding: 5px;
+	            text-align: left;
+	        }
+	
+	        tr:nth-child(even) {
+	            background-color: #fff;
+	        }
+	    </style>
+	</head>
+	
+	<body>
+	
+		<div class="container">
+	
+	        <div class="header">
+	            <div class="logo">
+	                <img src="logo_empresa.png">
+	            </div>
+	            <div class="titulo">
+	                Solicitação de Compras
+	            </div>
+	        </div>
+	
+	        <div class="main">
+	        
+	        	<div class="texto-informativo">A solicita&ccedil;&atilde;o abaixo est&aacute; aguardando sua aprova&ccedil;&atilde;o:</div>
+	            
+	            <table>
+					<tr>
+						<td class="label">
+							Solicitação:
+						</td>
+						<td>
+							${NR_SOLICITACAO}
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Solicitante:
+						</td>
+						<td>
+							${NM_SOLICITANTE}
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Data de abertura:
+						</td>
+						<td>
+							${DATA_ABERTURA}
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Produto:
+						</td>
+						<td>
+							${PRODUTO}
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Valor unitário:
+						</td>
+						<td>
+							${VALOR_UNITARIO}
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Quantidade:
+						</td>
+						<td>
+							${QUANTIDADE}
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							Valor total:
+						</td>
+						<td>
+							${VALOR_TOTAL}
+						</td>
+					</tr>
+				</table>
+	        </div>
+	
+	    </div>
+	
+	</body>
+</html>
+
+
+

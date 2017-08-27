@@ -93,17 +93,17 @@
       </children>
     </children>
     <children active="true" visible="true" xsi:type="pi:ContainerShape">
-      <graphicsAlgorithm filled="false" height="52" lineVisible="false" lineWidth="1" transparency="0.0" width="105" x="478" xsi:type="al:Rectangle" y="64"/>
+      <graphicsAlgorithm filled="false" height="52" lineVisible="false" lineWidth="1" transparency="0.0" width="106" x="478" xsi:type="al:Rectangle" y="64"/>
       <link businessObjects="task9"/>
       <anchors incomingConnections="/0/@connections.2" outgoingConnections="/0/@connections.3" xsi:type="pi:ChopboxAnchor"/>
       <anchors active="true" referencedGraphicsAlgorithm="/0/@children.4/@graphicsAlgorithm" relativeHeight="0.51" relativeWidth="1.0" visible="true" xsi:type="pi:BoxRelativeAnchor">
         <graphicsAlgorithm filled="false" lineVisible="false" xsi:type="al:Ellipse"/>
       </anchors>
       <children visible="true">
-        <graphicsAlgorithm cornerHeight="5" cornerWidth="5" height="52" lineWidth="1" style="/0/@styles.43" transparency="0.0" width="105" xsi:type="al:RoundedRectangle"/>
+        <graphicsAlgorithm cornerHeight="5" cornerWidth="5" height="52" lineWidth="1" style="/0/@styles.43" transparency="0.0" width="106" xsi:type="al:RoundedRectangle"/>
       </children>
       <children visible="true">
-        <graphicsAlgorithm filled="false" font="/0/@fonts.1" height="42" horizontalAlignment="ALIGNMENT_CENTER" lineVisible="true" lineWidth="1" style="/0/@styles.44" transparency="0.0" value="Revisar" width="95" x="5" xsi:type="al:MultiText" y="5"/>
+        <graphicsAlgorithm filled="false" font="/0/@fonts.1" height="42" horizontalAlignment="ALIGNMENT_CENTER" lineVisible="true" lineWidth="1" style="/0/@styles.44" transparency="0.0" value="Revisar" width="96" x="5" xsi:type="al:MultiText" y="5"/>
       </children>
     </children>
     <children active="true" visible="true" xsi:type="pi:ContainerShape">
@@ -1710,7 +1710,7 @@
     <fonts name="Arial" size="8"/>
     <fonts bold="true" name="Arial" size="8"/>
   </pi:Diagram>
-  <bpmn2:BpmnProcess author="" cardIndex="solicitacaoDeCompras" category="" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="local" id="solicitacaoDeCompras" instruction="" keyWord="" name="solicitacaoDeCompras" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="LOCALHOST" version="9" volume="Default"/>
+  <bpmn2:BpmnProcess author="" cardIndex="43" category="Financeiro" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="solicitacaoDeCompras" instruction="" keyWord="" name="solicitacaoDeCompras" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="LOCALHOST" version="19" volume="Default"/>
   <bpmn2:BpmnPool cores="FFFFFF" id="pool1" name="Pool"/>
   <bpmn2:BpmnSwimLane cores="9F9F9F" id="swimlane2" name="Reporter"/>
   <bpmn2:BpmnSwimLane cores="C0C0C0" id="swimlane3" name="Assignee"/>
@@ -1723,8 +1723,8 @@
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow10" name="" sourceRef="task5" targetRef="task9"/>
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow11" name="" sourceRef="task9" targetRef="task5"/>
   <bpmn2:BpmnSwimLane cores="82b0b7" id="swimlane12" name="SwimLane"/>
-  <bpmn2:BpmnEndEvent id="endevent13" incoming="flow14" name="End" signalId="0" type="60"/>
+  <bpmn2:BpmnEndEvent id="endevent13" incoming="flow14" name="Sim" signalId="0" type="60"/>
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow14" name="Sim" sourceRef="task5" targetRef="endevent13"/>
-  <bpmn2:BpmnEndEvent id="endevent15" incoming="flow16" name="End" signalId="0" type="60"/>
+  <bpmn2:BpmnEndEvent id="endevent15" incoming="flow16" name="N&#227;o" signalId="0" type="60"/>
   <bpmn2:SequenceFlow atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/&gt;" id="flow16" name="N&#227;o" sourceRef="task5" targetRef="endevent15"/>
 </xmi:XMI>
